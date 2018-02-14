@@ -24,6 +24,8 @@ class BooksApp extends React.Component {
     })
   }
 
+  
+
   render() {
     let { books } = this.state;
     const shelfBooks = [{
@@ -42,6 +44,7 @@ class BooksApp extends React.Component {
       books: books.filter(book => book.shelf === 'read')
     }]
 
+    
     return (
       <div className="app">
 
@@ -62,7 +65,10 @@ class BooksApp extends React.Component {
         )
         } />
 
-        <Route path='/search' component={SearchBooks} />
+        <Route path='/search' render={() => (
+
+          <SearchBooks  />
+        )} />
 
 
       </div>

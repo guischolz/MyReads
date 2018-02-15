@@ -1,11 +1,20 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import * as BooksAPI from './BooksAPI'
+import './App.css'
+import Books from './Books'
 
 class SearchBooks extends React.Component {
-
-    searchBooksHandler = (query) => {
-        console.log(query);
+    state =
+        {
+            books: []
+        }
+    
+        searchBooksHandler = (query) => {
+          
+        BooksAPI.search(query).then((books) => {
+            this.setState({ books })
+        })
     }
 
     render() {
@@ -27,7 +36,7 @@ class SearchBooks extends React.Component {
                     </div>
                 </div>
                 <div className="search-books-results">
-                    <ol className="books-grid"></ol>
+                    <Books books={this.state.books} />
                 </div>
             </div>
 

@@ -11,12 +11,12 @@ class Books extends React.Component {
     render() {
         return (
             <ol className="books-grid">
-                {
-                    this.props.books.map(book => (
+                {this.props.books.length > 0 ? (
+                    this.props.books.map((book) => (
                         <li key={book.id}>
                             <div className="book">
                                 <div className="book-top">
-                                    <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.smallThumbnail})` }}></div>
+                                    <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.thumbnail})` }}></div>
                                     <div className="book-shelf-changer">
                                         <select onChange={this.handlerChange}>
                                             <option value="none" disabled>Move to...</option>
@@ -28,12 +28,18 @@ class Books extends React.Component {
                                     </div>
                                 </div>
                                 <div className="book-title">{book.title}</div>
-                                <div className="book-authors">{book.authors}</div>
+                                <div className="book-authors">{book.authors ? book.authors.join(' ,') : ''}</div>
                             </div>
                         </li>
-                    ))}
+                    ))
+                ) : (
+                        <div className="books"> Empty Books </div>
+                    )
+                }
             </ol>
         )
+
     }
 }
+
 export default Books

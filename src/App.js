@@ -8,7 +8,7 @@ import * as BooksAPI from './BooksAPI'
 
 class BooksApp extends React.Component {
   state = {
-    books: []
+    booksShelfs: []
     /**
      * TODO: Instead of using this state variable to keep track of which page
      * we're on, use the URL in the browser's address bar. This will ensure that
@@ -20,14 +20,15 @@ class BooksApp extends React.Component {
 
   componentDidMount() {
     BooksAPI.getAll().then((books) => {
-      this.setState({ books })
+      this.setState({ booksShelfs : books })
+      
     })
   }
 
   
 
   render() {
-    let { books } = this.state;
+    let  books  = this.state.booksShelfs;
     const shelfBooks = [{
       id: 1,
       title: 'Currently Reading',
@@ -67,7 +68,7 @@ class BooksApp extends React.Component {
 
         <Route path='/search' render={() => (
 
-          <SearchBooks  />
+          <SearchBooks booksShelfs={this.state.booksShelfs} />
         )} />
 
 

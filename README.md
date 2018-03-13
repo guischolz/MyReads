@@ -37,17 +37,6 @@ Yarn is a package manager built by Facebook Team and seems to be faster than npm
     └── index.js # You should not need to modify this file. It is used for DOM rendering only.
 ```
 
-Structure of the web app
-
-index.js
-  └── App.js
-        ├── ListBooks.js
-        │       └── Book.js
-        │                
-        └── SearchBooks.js
-                └── Books.js
-
-
 ##Installing
 To download the project follow the instructions bellow
 

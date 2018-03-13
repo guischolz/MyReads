@@ -8,12 +8,14 @@ Of course, you are free to start this project from scratch if you wish! Just be 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ##Prerequisites
-The project can be built with npm or yarn, so choose one of the approach bellow in case you don't have any installed on your system.
+The project can be built with npm or yarn.
 
-npm is distributed with Node.js which means that when you download Node.js, you automatically get npm installed on your computer. [Download Node.js](https://nodejs.org/en/download/)
+npm is distributed with Node.js. 
+Get npm installed on your computer. [Download Node.js](https://nodejs.org/en/download/)
+
 or
 
-Yarn is a package manager built by Facebook Team and seems to be faster than npm in general. [Download Yarn](https://yarnpkg.com/en/docs/install)
+Yarn[Download Yarn](https://yarnpkg.com/en/docs/install)
 
 ## What You're Getting
 ```bash

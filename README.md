@@ -49,12 +49,15 @@ cd myreads
 npm
 
 npm install
+
 npm start
+
 or
 
 yarn
 
 yarn install
+
 yarn start
 
 ## Backend Server

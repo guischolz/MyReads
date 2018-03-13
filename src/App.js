@@ -9,7 +9,8 @@ import * as BooksAPI from './BooksAPI'
 class BooksApp extends React.Component {
   state = {
     booksShelve: [],
-    searchResult: []
+    searchResult: [],
+    query: ''
     /**
      * TODO: Instead of using this state variable to keep track of which page
      * we're on, use the URL in the browser's address bar. This will ensure that
@@ -43,7 +44,9 @@ class BooksApp extends React.Component {
     })
   }
 
-  searchBooksHandler = (query) => {
+  searchBooksHandler = (event) => {
+    const query = event.target.value;
+    this.setState({ query });
     if (query === '') { this.setState({ searchResult: [] }) }
     else {
       BooksAPI.search(query.trim())
@@ -71,7 +74,6 @@ class BooksApp extends React.Component {
 
           }
         })
-
         .catch((error) => {
           console.log(error);
           console.log(this.state.searchResult);
@@ -108,6 +110,7 @@ class BooksApp extends React.Component {
           <SearchBooks searchResult={this.state.searchResult}
             onSearch={this.searchBooksHandler}
             onUpdateShelf={this.handlerChange}
+            query={this.state.query}
           />
         )} />
 

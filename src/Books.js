@@ -2,7 +2,7 @@ import React from 'react'
 import './App.css'
 
 
-const Books = ({handlerChange, books}) => {
+const Books = ({ handlerChange, books }) => {
     return (
         <ol className="books-grid">
             {books.length > 0 ? (
@@ -13,7 +13,7 @@ const Books = ({handlerChange, books}) => {
                                 <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${("imageLinks" in book) ? book.imageLinks.thumbnail : ""})` }}></div>
                                 <div className="book-shelf-changer">
                                     <select onChange={(event) => { handlerChange(book, event.target.value) }} value={"shelf" in book ? book.shelf : 'none'}>
-                                        <option value="none" disabled>Move to...</option>
+                                        <option disabled>Move to...</option>
                                         <option value="currentlyReading">Currently Reading</option>
                                         <option value="wantToRead">Want to Read</option>
                                         <option value="read">Read</option>
